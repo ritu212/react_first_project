@@ -1,7 +1,8 @@
 import React from 'react'
 import { AppBar, Typography, Toolbar, Button, makeStyles } from '@material-ui/core'
 //import {createBrowserHistory as history} from 'history'
-import {useHistory} from 'react-router-dom'
+//import {useHistory} from 'react-router-dom'
+import history from '../history'
 const useStyles = makeStyles((theme)=>({
     root:{
         display:'flex',
@@ -16,10 +17,10 @@ const useStyles = makeStyles((theme)=>({
 }));
 function Welcome() {
     const classes=useStyles();
-    const history=useHistory();
+    //const history=useHistory();
     return (
         <div>
-            <AppBar>
+            <AppBar position="static">
                 <Toolbar>
                 <Typography>WELCOME</Typography>
                 <div className={classes.root}>
