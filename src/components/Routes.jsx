@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -8,31 +8,29 @@ import {
 } from "react-router-dom";
 import SignUpComponent from "./SignUpComponent";
 import LoginComponent from "./LoginComponent";
-import Welcome from './Welcome';
-//import history from '../history';
+import Welcome from './Welcome'
 
-// export default class Routes extends Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <Welcome />
-//         <Router>
-          
-//             <Route  exact path="/" component={Welcome}></Route>
-//             <Route   path="/SignUp" component={SignUpComponent}></Route>
-//             <Route   path="/Login" component={LoginComponent}></Route>
-          
-//           <Link to="/"><Welcome ></Welcome></Link>
-//         </Router>
+export default class Routes extends Component {
+  render() {
+    return (
+      <Router>
+            <Fragment>
+                <Welcome />
+                <Switch>
+            <Route  exact path="/" component={LoginComponent}></Route>
+            <Route  path="/SignUp" component={SignUpComponent}></Route>
+            <Route  path="/Login" component={LoginComponent}></Route>
+          </Switch >
+          </Fragment>
+        </Router>
         
-//       </React.Fragment>
-//     );
-//   }
-// }
-const Routes = {
-    "/":() => <Welcome />,
-    "/SignUp":()=><SignUpComponent />,
-    "/Login":()=> <LoginComponent />
+      
+    );
+  }
 }
-
-export default Routes;
+// const Routes = {
+//     "/":() => <Welcome />,
+//     "/SignUp":()=><SignUpComponent />,
+//     "/Login":()=> <LoginComponent />
+// }
+//export default Routes;
